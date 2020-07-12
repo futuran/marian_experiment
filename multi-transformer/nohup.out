@@ -239,3 +239,11 @@ Using GPUs: 0 1
 [2020-07-12 08:38:53] [data] Done shuffling 160000 sentences to temp files
 [2020-07-12 08:39:26] Ep. 6 : Up. 9000 : Sen. 18,655 : Cost 5.26169729 : Time 77.44s : 12382.27 words/s : L.r. 5.6250e-05
 [2020-07-12 08:40:40] Ep. 6 : Up. 9500 : Sen. 64,155 : Cost 5.13890123 : Time 74.17s : 13156.07 words/s : L.r. 5.9375e-05
+[2020-07-12 08:41:54] Ep. 6 : Up. 10000 : Sen. 109,580 : Cost 5.00916052 : Time 73.82s : 12907.48 words/s : L.r. 6.2500e-05
+[2020-07-12 08:41:54] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz.orig.npz
+[2020-07-12 08:41:55] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.iter10000.npz
+[2020-07-12 08:41:56] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz
+[2020-07-12 08:41:58] Saving Adam parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz.optimizer.npz
+[2020-07-12 08:42:02] [valid] Ep. 6 : Up. 10000 : ce-mean-words : 4.17167 : new best
+[2020-07-12 08:42:03] [valid] Ep. 6 : Up. 10000 : perplexity : 64.8233 : new best
+[2020-07-12 08:42:20] [valid] Ep. 6 : Up. 10000 : translation : 4.39 : new best
