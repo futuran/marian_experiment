@@ -212,3 +212,30 @@ Using GPUs: 0 1
 [2020-07-12 08:28:53] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.iter5000.npz
 [2020-07-12 08:28:54] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz
 [2020-07-12 08:28:56] Saving Adam parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz.optimizer.npz
+[2020-07-12 08:29:00] [valid] Ep. 3 : Up. 5000 : ce-mean-words : 5.26541 : new best
+[2020-07-12 08:29:00] [valid] Ep. 3 : Up. 5000 : perplexity : 193.525 : new best
+[2020-07-12 08:29:22] [valid] Ep. 3 : Up. 5000 : translation : 0.84 : new best
+[2020-07-12 08:30:04] Seen 159994 samples
+[2020-07-12 08:30:04] Starting epoch 4
+[2020-07-12 08:30:04] [data] Shuffling files
+[2020-07-12 08:30:04] [data] Done reading 160000 sentences
+[2020-07-12 08:30:05] [data] Done shuffling 160000 sentences to temp files
+[2020-07-12 08:30:40] Ep. 4 : Up. 5500 : Sen. 20,293 : Cost 5.96570969 : Time 108.33s : 8682.76 words/s : L.r. 3.4375e-05
+[2020-07-12 08:31:55] Ep. 4 : Up. 6000 : Sen. 65,793 : Cost 5.87258673 : Time 74.76s : 13364.22 words/s : L.r. 3.7500e-05
+[2020-07-12 08:33:08] Ep. 4 : Up. 6500 : Sen. 111,293 : Cost 5.75143290 : Time 73.75s : 12934.66 words/s : L.r. 4.0625e-05
+[2020-07-12 08:34:23] Ep. 4 : Up. 7000 : Sen. 156,718 : Cost 5.64106035 : Time 74.27s : 12987.65 words/s : L.r. 4.3750e-05
+[2020-07-12 08:34:28] Seen 159994 samples
+[2020-07-12 08:34:28] Starting epoch 5
+[2020-07-12 08:34:28] [data] Shuffling files
+[2020-07-12 08:34:28] [data] Done reading 160000 sentences
+[2020-07-12 08:34:29] [data] Done shuffling 160000 sentences to temp files
+[2020-07-12 08:35:40] Ep. 5 : Up. 7500 : Sen. 42,224 : Cost 5.52014685 : Time 77.39s : 12546.16 words/s : L.r. 4.6875e-05
+[2020-07-12 08:36:54] Ep. 5 : Up. 8000 : Sen. 87,724 : Cost 5.42115164 : Time 73.64s : 12903.07 words/s : L.r. 5.0000e-05
+[2020-07-12 08:38:08] Ep. 5 : Up. 8500 : Sen. 133,149 : Cost 5.34236002 : Time 74.44s : 13107.86 words/s : L.r. 5.3125e-05
+[2020-07-12 08:38:52] Seen 159994 samples
+[2020-07-12 08:38:52] Starting epoch 6
+[2020-07-12 08:38:52] [data] Shuffling files
+[2020-07-12 08:38:52] [data] Done reading 160000 sentences
+[2020-07-12 08:38:53] [data] Done shuffling 160000 sentences to temp files
+[2020-07-12 08:39:26] Ep. 6 : Up. 9000 : Sen. 18,655 : Cost 5.26169729 : Time 77.44s : 12382.27 words/s : L.r. 5.6250e-05
+[2020-07-12 08:40:40] Ep. 6 : Up. 9500 : Sen. 64,155 : Cost 5.13890123 : Time 74.17s : 13156.07 words/s : L.r. 5.9375e-05
