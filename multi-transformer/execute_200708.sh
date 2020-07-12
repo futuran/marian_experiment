@@ -3,7 +3,7 @@
 echo $MARIAN_DATA
 echo $MARIAN_OUTPUT
 
-MARIAN=../../build
+MARIAN=../../../../build
 
 # if we are in WSL, we need to add '.exe' to the tool names
 if [ -e "/bin/wslpath" ]
@@ -39,14 +39,14 @@ then
         --train-sets $MARIAN_DATA/train.es $MARIAN_DATA/train.fr $MARIAN_DATA/train.en \
         --max-length 100 \
         --vocabs $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml \
-        --mini-batch 32 --maxi-batch 1000 \
+        --mini-batch 91 --maxi-batch 1000 \
         --early-stopping 10 --cost-type=ce-mean-words \
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics ce-mean-words perplexity translation \
         --valid-sets $MARIAN_DATA/valid.es $MARIAN_DATA/valid.fr $MARIAN_DATA/valid.en \
         --valid-script-path "bash ./scripts/validate_tamura_200708.sh" \
         --valid-translation-output $OUTPUT/valid.en.output --quiet-translation \
-        --valid-mini-batch 32 \
+        --valid-mini-batch 64 \
         --beam-size 6 --normalize 0.6 \
         --log $MODEL/train.log --valid-log $MODEL/valid.log \
         --enc-depth 6 --dec-depth 6 \
