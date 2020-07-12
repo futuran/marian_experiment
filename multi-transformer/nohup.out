@@ -199,3 +199,16 @@ Using GPUs: 0 1
 [2020-07-12 08:21:24] Ep. 2 : Up. 2000 : Sen. 21,931 : Cost 7.26930618 : Time 80.53s : 12134.49 words/s : L.r. 1.2500e-05
 [2020-07-12 08:22:37] Ep. 2 : Up. 2500 : Sen. 67,431 : Cost 7.02483177 : Time 73.33s : 13012.99 words/s : L.r. 1.5625e-05
 [2020-07-12 08:23:52] Ep. 2 : Up. 3000 : Sen. 112,931 : Cost 6.83133364 : Time 74.63s : 13181.99 words/s : L.r. 1.8750e-05
+[2020-07-12 08:25:06] Ep. 2 : Up. 3500 : Sen. 158,356 : Cost 6.63341284 : Time 73.93s : 12869.02 words/s : L.r. 2.1875e-05
+[2020-07-12 08:25:09] Seen 159994 samples
+[2020-07-12 08:25:09] Starting epoch 3
+[2020-07-12 08:25:09] [data] Shuffling files
+[2020-07-12 08:25:09] [data] Done reading 160000 sentences
+[2020-07-12 08:25:09] [data] Done shuffling 160000 sentences to temp files
+[2020-07-12 08:26:24] Ep. 3 : Up. 4000 : Sen. 43,862 : Cost 6.45680380 : Time 77.57s : 12573.94 words/s : L.r. 2.5000e-05
+[2020-07-12 08:27:37] Ep. 3 : Up. 4500 : Sen. 89,362 : Cost 6.29168081 : Time 73.53s : 12960.61 words/s : L.r. 2.8125e-05
+[2020-07-12 08:28:52] Ep. 3 : Up. 5000 : Sen. 134,787 : Cost 6.17072487 : Time 74.53s : 12962.18 words/s : L.r. 3.1250e-05
+[2020-07-12 08:28:52] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz.orig.npz
+[2020-07-12 08:28:53] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.iter5000.npz
+[2020-07-12 08:28:54] Saving model weights and runtime parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz
+[2020-07-12 08:28:56] Saving Adam parameters to /nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/b91_lr1e-4_s1/model/model.npz.optimizer.npz
