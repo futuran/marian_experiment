@@ -39,7 +39,7 @@ then
         --train-sets $MARIAN_DATA/train.es $MARIAN_DATA/train.fr $MARIAN_DATA/train.en \
         --max-length 100 \
         --vocabs $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml \
-        --mini-batch 91 --maxi-batch 1000 \
+        --mini-batch 150 --maxi-batch 1000 \
         --early-stopping 10 --cost-type=ce-mean-words \
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics ce-mean-words perplexity translation \
