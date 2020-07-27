@@ -16,37 +16,40 @@ MARIAN_DECODER=$MARIAN/marian-decoder$EXT
 MARIAN_VOCAB=$MARIAN/marian-vocab$EXT
 MARIAN_SCORER=$MARIAN/marian-scorer$EXT
 
-#DATA=../../../EX-MS/data/UN6WAY_Nolack_Multi
-#OUTPUT=./result_Nolack_Multi_80
+#DATA=../../../EX-MS/data/UN6WAY_esfrar
+#OUTPUT=./result_es2en_marian_80
+
+DATA=$MARIAN_DATA
 OUTPUT=$MARIAN_OUTPUT/output
 MODEL=$MARIAN_OUTPUT/model
 
 # set chosen gpus
 GPUS="0 1"
-if [ $# -ne 0]
+if [ $# -ne 0 ]
 then
     GPUS=$@
 fi
 echo Using GPUs: $GPUS
 
-cat $MARIAN_DATA/train.es $MARIAN_DATA/train.fr $MARIAN_DATA/train.en $MARIAN_DATA/valid.es $MARIAN_DATA/valid.fr $MARIAN_DATA/valid.en $MARIAN_DATA/test.es $MARIAN_DATA/test.fr $MARIAN_DATA/test.en | $MARIAN_VOCAB --max-size 36000 > $MODEL/vocab.esfren.yml
+# create common vocabulary
+cat $DATA/train.esfr $DATA/train.en $DATA/valid.esfr $DATA/valid.en $DATA/test.esfr $DATA/test.en | $MARIAN_VOCAB --max-size 36000 > $MODEL/vocab.esfren.yml
 
 # train model
 if [ ! -e "$MODEL/model.npz" ]
 then
     $MARIAN_TRAIN \
-        --model $MODEL/model.npz --type shared-multi-transformer \
-        --train-sets $MARIAN_DATA/train.es $MARIAN_DATA/train.fr $MARIAN_DATA/train.en \
+        --model $MODEL/model.npz --type transformer \
+        --train-sets $DATA/train.esfr $DATA/train.en\
         --max-length 100 \
-        --vocabs $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml \
-        --mini-batch-fit -w 4394 --maxi-batch 1000 \
+        --vocabs $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml \
+        --mini-batch-fit -w 5000 --maxi-batch 1000 \
         --early-stopping 10 --cost-type=ce-mean-words \
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics ce-mean-words perplexity translation \
-        --valid-sets $MARIAN_DATA/valid.es $MARIAN_DATA/valid.fr $MARIAN_DATA/valid.en \
+        --valid-sets $DATA/valid.esfr $DATA/valid.en \
         --valid-script-path "bash ./scripts/validate_tamura_200708.sh" \
-        --valid-translation-output $OUTPUT/valid.en.output --quiet-translation \
-        --valid-mini-batch 64 \
+        --valid-translation-output $OUTPUT/valid.esfr.output --quiet-translation \
+        --valid-mini-batch 32 \
         --beam-size 6 --normalize 0.6 \
         --log $MODEL/train.log --valid-log $MODEL/valid.log \
         --enc-depth 6 --dec-depth 6 \
