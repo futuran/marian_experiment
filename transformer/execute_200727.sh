@@ -49,7 +49,7 @@ then
         --valid-sets $DATA/valid.esfr $DATA/valid.en \
         --valid-script-path "bash ./scripts/validate_tamura_200708.sh" \
         --valid-translation-output $OUTPUT/valid.esfr.output --quiet-translation \
-        --valid-mini-batch 32 \
+        --valid-mini-batch 64 \
         --beam-size 6 --normalize 0.6 \
         --log $MODEL/train.log --valid-log $MODEL/valid.log \
         --enc-depth 6 --dec-depth 6 \
