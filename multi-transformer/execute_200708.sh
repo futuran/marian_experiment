@@ -18,6 +18,7 @@ MARIAN_SCORER=$MARIAN/marian-scorer$EXT
 
 #DATA=../../../EX-MS/data/UN6WAY_Nolack_Multi
 #OUTPUT=./result_Nolack_Multi_80
+DATA=$MARIAN_DATA
 OUTPUT=$MARIAN_OUTPUT/output
 MODEL=$MARIAN_OUTPUT/model
 
@@ -29,21 +30,21 @@ then
 fi
 echo Using GPUs: $GPUS
 
-cat $MARIAN_DATA/train.es $MARIAN_DATA/train.fr $MARIAN_DATA/train.en $MARIAN_DATA/valid.es $MARIAN_DATA/valid.fr $MARIAN_DATA/valid.en $MARIAN_DATA/test.es $MARIAN_DATA/test.fr $MARIAN_DATA/test.en | $MARIAN_VOCAB --max-size 36000 > $MODEL/vocab.esfren.yml
+cat $DATA/train.es $DATA/train.fr $DATA/train.en $DATA/valid.es $DATA/valid.fr $DATA/valid.en $DATA/test.es $DATA/test.fr $DATA/test.en | $MARIAN_VOCAB --max-size 36000 > $MODEL/vocab.esfren.yml
 
 # train model
 if [ ! -e "$MODEL/model.npz" ]
 then
     $MARIAN_TRAIN \
         --model $MODEL/model.npz --type shared-multi-transformer \
-        --train-sets $MARIAN_DATA/train.es $MARIAN_DATA/train.fr $MARIAN_DATA/train.en \
+        --train-sets $DATA/train.es $DATA/train.fr $DATA/train.en \
         --max-length 100 \
         --vocabs $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml $MODEL/vocab.esfren.yml \
-        --mini-batch-fit -w 4394 --maxi-batch 1000 \
+        --mini-batch-fit -w 5000 --maxi-batch 1000 \
         --early-stopping 10 --cost-type=ce-mean-words \
         --valid-freq 5000 --save-freq 5000 --disp-freq 500 \
         --valid-metrics ce-mean-words perplexity translation \
-        --valid-sets $MARIAN_DATA/valid.es $MARIAN_DATA/valid.fr $MARIAN_DATA/valid.en \
+        --valid-sets $DATA/valid.es $DATA/valid.fr $DATA/valid.en \
         --valid-script-path "bash ./scripts/validate_tamura_200708.sh" \
         --valid-translation-output $OUTPUT/valid.en.output --quiet-translation \
         --valid-mini-batch 64 \
