@@ -21,3 +21,6 @@ export MARIAN_DATA=/nmt/work/EX-MS/data/UN6WAY_Nolack_Multi_16
 ```
 5. execute_200708.shを編集
 6. execute_200708.shを実行
+
+7. (dockerから１度でも出た場合は4を再度実行)
+8. sh translate_200708.sh を実行
