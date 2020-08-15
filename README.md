@@ -7,8 +7,7 @@ export MARIAN_DATA=/nmt/work/EX-MS/data/UN6WAY_Nolack_Multi_16
 ```
 1. そのディレクトリを作成
 ```
-mkdir nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/m5000_lr3e-4_s1/model
-mkdir nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/m5000_lr3e-4_s1/output
+mkdir nmt/work/EX-MS/result/UN6WAY_Nolack_Multi_16/m5000_lr3e-4_s1
 ```
 1. さらにmodel, outputファイルも作成
 ```
